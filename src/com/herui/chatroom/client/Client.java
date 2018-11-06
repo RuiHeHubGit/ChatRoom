@@ -1,7 +1,7 @@
 package com.herui.chatroom.client;
 
-import com.herui.chatroom.common.SessionListener;
-import com.herui.chatroom.common.TextMessageSession;
+import com.herui.chatroom.session.Session;
+import com.herui.chatroom.session.SessionListener;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -10,10 +10,10 @@ import java.util.Scanner;
 /**
  * Created by HeRui on 2018/11/3.
  */
-public class Client implements SessionListener {
+public class Client implements SessionListener<String> {
     private String url = "127.0.0.1";
     private int port = 9999;
-    private TextMessageSession session;
+    private Session<String> session;
 
     public void start() {
         start(url, port);
@@ -26,14 +26,15 @@ public class Client implements SessionListener {
         Scanner scanner = new Scanner(System.in);
         try {
             socket = new Socket(url, port);
-            session = new TextMessageSession(socket, this);
+            session = new Session<>(socket, this);
+            session.open();
             System.out.println("输入用户名：");
             String line = scanner.nextLine();
             session.getProperty().put("username", line);
-            session.sendMessage(line);
+            session.sendMsg(line);
             do {
                 line = scanner.nextLine();
-                session.sendMessage(line);
+                session.sendMsg(line);
             } while (line != null);
         } catch (IOException e) {
             onError(e);
@@ -50,13 +51,13 @@ public class Client implements SessionListener {
     }
 
     @Override
-    public void onOpen(TextMessageSession session) {
-        session.setId(session.readLine());
+    public void onOpen(Session<String> session) {
+        session.setId(session.readMsg());
         System.out.println("client connected,session:"+session);
     }
 
     @Override
-    public void onMessage(TextMessageSession session, Object msg) {
+    public void onMessage(Session<String> session, String msg) {
         System.out.println(msg);
     }
 
@@ -66,7 +67,7 @@ public class Client implements SessionListener {
     }
 
     @Override
-    public void onClone(TextMessageSession session) {
+    public void onClone(Session<String> session) {
         System.out.println("client disconnect,session:"+session);
     }
 }

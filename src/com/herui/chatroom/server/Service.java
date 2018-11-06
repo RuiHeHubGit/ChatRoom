@@ -1,7 +1,7 @@
 package com.herui.chatroom.server;
 
-import com.herui.chatroom.common.SessionListener;
-import com.herui.chatroom.common.TextMessageSession;
+import com.herui.chatroom.session.Session;
+import com.herui.chatroom.session.SessionListener;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -16,7 +16,7 @@ import java.util.Vector;
 public class Service implements SessionListener<String> {
     private static int port = 9999;
     private static ServerSocket serverSocket;
-    private static List<TextMessageSession> sessions;
+    private static List<Session<String>> sessions;
 
     private Service(){}
 
@@ -34,7 +34,7 @@ public class Service implements SessionListener<String> {
             serverSocket = new ServerSocket(port);
             System.out.println("Server is started on port:"+port);
             while (true) {
-                new TextMessageSession(serverSocket.accept(), new Service());
+                new Session<>(serverSocket.accept(), new Service()).open();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -54,21 +54,21 @@ public class Service implements SessionListener<String> {
     }
 
     @Override
-    public void onOpen(TextMessageSession session) {
-        session.getProperty().put("username", session.readLine());
-        session.sendMessage(session.getId());
+    public void onOpen(Session<String> session) {
+        session.getProperty().put("username", session.readMsg());
+        session.sendMsg(session.getId());
         sessions.add(session);
         System.out.println("client connected:"+session);
-        for (TextMessageSession s : sessions) {
-            s.sendMessage("["+session.getProperty().get("username")+"] "+ getNowTimeString("MM-dd HH:mm:ss")+":加入了聊天室！");
+        for (Session s : sessions) {
+            s.sendMsg("["+session.getProperty().get("username")+"] "+ getNowTimeString("MM-dd HH:mm:ss")+":加入了聊天室！");
         }
     }
 
     @Override
-    public void onMessage(TextMessageSession session, String msg) {
+    public void onMessage(Session<String> session, String msg) {
         System.out.println("["+session.getProperty().get("username")+"] "+ getNowTimeString("yyyy-MM-dd HH:mm:ss")+":\n"+msg);
-        for (TextMessageSession s : sessions) {
-            s.sendMessage("["+session.getProperty().get("username")+"] "+ getNowTimeString("MM-dd HH:mm:ss")+":\n"+msg);
+        for (Session s : sessions) {
+            s.sendMsg("["+session.getProperty().get("username")+"] "+ getNowTimeString("MM-dd HH:mm:ss")+":\n"+msg);
         }
     }
 
@@ -78,11 +78,11 @@ public class Service implements SessionListener<String> {
     }
 
     @Override
-    public void onClone(TextMessageSession session) {
+    public void onClone(Session<String> session) {
         sessions.remove(session);
         System.out.println("client disconnect:"+session);
-        for (TextMessageSession s : sessions) {
-            s.sendMessage("["+session.getProperty().get("username")+"] "+ getNowTimeString("MM-dd HH:mm:ss")+":离开了聊天室！");
+        for (Session s : sessions) {
+            s.sendMsg("["+session.getProperty().get("username")+"] "+ getNowTimeString("MM-dd HH:mm:ss")+":离开了聊天室！");
         }
     }
 
