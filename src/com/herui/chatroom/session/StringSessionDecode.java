@@ -17,4 +17,16 @@ public class StringSessionDecode implements SessionDecode<String>{
     public String decode() throws IOException {
         return reader.readLine();
     }
+
+    @Override
+    public void destroy() {
+        if(reader != null) {
+            try {
+                reader.close();
+            } catch (IOException e) {
+                System.out.println(e.getLocalizedMessage());
+            }
+            reader = null;
+        }
+    }
 }

@@ -19,4 +19,16 @@ public class StringSessionEncode implements SessionEncode<String>{
         writer.newLine();
         writer.flush();
     }
+
+    @Override
+    public void destroy() {
+        if(writer != null) {
+            try {
+                writer.close();
+            } catch (IOException e) {
+                System.out.println(e.getLocalizedMessage());
+            }
+            writer = null;
+        }
+    }
 }

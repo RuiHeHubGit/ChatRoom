@@ -80,31 +80,7 @@ public class Session<T> {
                 } catch (IOException e) {
                     listener.onError(e);
                 } finally {
-                    closed = true;
-                    listener.onClone(Session.this);
-
-                    if(in != null) {
-                        try {
-                            in.close();
-                        } catch (IOException e) {
-                            System.out.println(e.getLocalizedMessage());
-                        }
-                    }
-
-                    if(out != null) {
-                        try {
-                            out.close();
-                        } catch (IOException e) {
-                            System.out.println(e.getLocalizedMessage());
-                        }
-                    }
-
-                    try {
-                        Session.this.socket.close();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    Session.this.socket = null;
+                    close();
                 }
             }).start();
         }
@@ -113,6 +89,29 @@ public class Session<T> {
     public synchronized void close() {
         if(!closed && socket != null) {
             closed = true;
+            listener.onClone(Session.this);
+
+            this.encode.destroy();
+            this.decode.destroy();
+            this.stringEncode.destroy();
+            this.stringDecode.destroy();
+
+            if(in != null) {
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    System.out.println(e.getLocalizedMessage());
+                }
+            }
+
+            if(out != null) {
+                try {
+                    out.close();
+                } catch (IOException e) {
+                    System.out.println(e.getLocalizedMessage());
+                }
+            }
+
             try {
                 socket.close();
                 socket = null;
@@ -180,22 +179,8 @@ public class Session<T> {
         return encode;
     }
 
-    public void setEncode(SessionEncode<T> encode) {
-        if(!closed && this.encode != encode) {
-            encode.init(this, out);
-        }
-        this.encode = encode;
-    }
-
     public SessionDecode<T> getDecode() {
         return decode;
-    }
-
-    public void setDecode(SessionDecode<T> decode) {
-        if(!closed && this.decode != decode) {
-            decode.init(this, in);
-        }
-        this.decode = decode;
     }
 
     public Date getCreateTime() {
