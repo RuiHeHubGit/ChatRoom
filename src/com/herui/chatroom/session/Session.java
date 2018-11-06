@@ -23,6 +23,10 @@ public class Session<T> {
     private SessionDecode<T> decode;
 
     public Session(Socket socket, SessionListener<T> listener) {
+        this(socket, listener, null, null);
+    }
+
+    public Session(Socket socket, SessionListener<T> listener, SessionEncode<T> encode, SessionDecode<T> decode) {
         if(socket == null) {
             throw new IllegalArgumentException("must set Socket");
         }
@@ -32,6 +36,8 @@ public class Session<T> {
 
         this.socket = socket;
         this.listener = listener;
+        this.encode = encode;
+        this.decode = decode;
 
         init();
     }
@@ -49,16 +55,22 @@ public class Session<T> {
         if(closed) {
             new Thread(()->{
                 try {
+                    in = socket.getInputStream();
+                    out = socket.getOutputStream();
+                    this.stringDecode.init(Session.this, in);
+                    this.stringEncode.init(Session.this, out);
+
                     if (this.encode == null) {
                         this.encode = (SessionEncode<T>) stringEncode;
+                    } else {
+                        this.decode.init(Session.this, in);
                     }
                     if (this.decode == null) {
                         this.decode = (SessionDecode<T>) stringDecode;
+                    } else {
+                        this.encode.init(Session.this, out);
                     }
-                    in = socket.getInputStream();
-                    out = socket.getOutputStream();
-                    this.encode.init(Session.this, out);
-                    this.decode.init(Session.this, in);
+
                     listener.onOpen(this);
                     closed = false;
                     T data;
@@ -169,6 +181,9 @@ public class Session<T> {
     }
 
     public void setEncode(SessionEncode<T> encode) {
+        if(!closed && this.encode != encode) {
+            encode.init(this, out);
+        }
         this.encode = encode;
     }
 
@@ -177,6 +192,9 @@ public class Session<T> {
     }
 
     public void setDecode(SessionDecode<T> decode) {
+        if(!closed && this.decode != decode) {
+            decode.init(this, in);
+        }
         this.decode = decode;
     }
 
