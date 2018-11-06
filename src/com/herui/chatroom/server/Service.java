@@ -55,8 +55,8 @@ public class Service implements SessionListener<String> {
 
     @Override
     public void onOpen(Session<String> session) {
-        session.getProperty().put("username", session.readMsg());
-        session.sendMsg(session.getId());
+        session.getProperty().put("username", session.readStringMsg());
+        session.sendStringMsg(session.getId());
         sessions.add(session);
         System.out.println("client connected:"+session);
         for (Session s : sessions) {

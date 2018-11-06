@@ -31,7 +31,7 @@ public class Client implements SessionListener<String> {
             System.out.println("输入用户名：");
             String line = scanner.nextLine();
             session.getProperty().put("username", line);
-            session.sendMsg(line);
+            session.sendStringMsg(line);
             do {
                 line = scanner.nextLine();
                 session.sendMsg(line);
@@ -52,7 +52,7 @@ public class Client implements SessionListener<String> {
 
     @Override
     public void onOpen(Session<String> session) {
-        session.setId(session.readMsg());
+        session.setId(session.readStringMsg());
         System.out.println("client connected,session:"+session);
     }
 

@@ -127,6 +127,23 @@ public class Session<T> {
         }
     }
 
+    public String readStringMsg() {
+        try {
+            return stringDecode.decode();
+        } catch (IOException e) {
+            listener.onError(e);
+        }
+        return null;
+    }
+
+    public void sendStringMsg(String data) {
+        try {
+            stringEncode.encode(data);
+        } catch (IOException e) {
+            listener.onError(e);
+        }
+    }
+
     public String getId() {
         return id;
     }
