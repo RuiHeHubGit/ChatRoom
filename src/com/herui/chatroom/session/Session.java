@@ -49,9 +49,10 @@ public class Session<T> {
         this.stringEncode = new StringSessionEncode();
         this.stringDecode = new StringSessionDecode();
         this.closed = true;
+        open();
     }
 
-    public synchronized void open() {
+    private void open() {
         if(closed) {
             new Thread(()->{
                 try {
@@ -86,7 +87,7 @@ public class Session<T> {
         }
     }
 
-    public synchronized void close() {
+    public void close() {
         if(!closed && socket != null) {
             closed = true;
             listener.onClone(Session.this);

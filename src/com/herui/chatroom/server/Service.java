@@ -34,7 +34,7 @@ public class Service implements SessionListener<String> {
             serverSocket = new ServerSocket(port);
             System.out.println("Server is started on port:"+port);
             while (true) {
-                new Session<>(serverSocket.accept(), new Service()).open();
+                new Session<>(serverSocket.accept(), new Service());
             }
         } catch (IOException e) {
             e.printStackTrace();

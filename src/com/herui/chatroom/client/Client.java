@@ -27,7 +27,6 @@ public class Client implements SessionListener<String> {
         try {
             socket = new Socket(url, port);
             session = new Session<>(socket, this);
-            session.open();
             System.out.println("输入用户名：");
             String line = scanner.nextLine();
             session.getProperty().put("username", line);
