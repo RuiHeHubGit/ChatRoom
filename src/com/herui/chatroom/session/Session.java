@@ -164,6 +164,22 @@ public class Session<T> {
         this.listener = listener;
     }
 
+    public SessionEncode<T> getEncode() {
+        return encode;
+    }
+
+    public void setEncode(SessionEncode<T> encode) {
+        this.encode = encode;
+    }
+
+    public SessionDecode<T> getDecode() {
+        return decode;
+    }
+
+    public void setDecode(SessionDecode<T> decode) {
+        this.decode = decode;
+    }
+
     public Date getCreateTime() {
         return createTime;
     }

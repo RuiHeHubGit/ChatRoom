@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1090c627-0d88-4836-8821-b57fe8b99f53" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/herui/chatroom/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/herui/chatroom/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/herui/chatroom/server/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/herui/chatroom/server/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/herui/chatroom/session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/herui/chatroom/session/Session.java" afterDir="false" />
     </list>
     <ignored path="ChatRoom.iws" />
@@ -30,7 +28,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Service.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Service.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/herui/chatroom/server/Service.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="261">
@@ -49,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/herui/chatroom/test/StartServer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
-              <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
               <folding>
                 <element signature="e#265#266#0" expanded="true" />
                 <element signature="e#296#297#0" expanded="true" />
@@ -81,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Session.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Session.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/herui/chatroom/session/Session.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="138" column="36" selection-start-line="138" selection-start-column="36" selection-end-line="138" selection-end-column="36" />
+            <state relative-caret-position="360">
+              <caret line="170" column="52" lean-forward="true" selection-start-line="170" selection-start-column="52" selection-end-line="170" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3926#3927#0" expanded="true" />
@@ -98,6 +96,13 @@
                 <element signature="e#4205#4206#0" expanded="true" />
                 <element signature="e#4262#4263#0" expanded="true" />
                 <element signature="e#4302#4303#0" expanded="true" />
+                <element signature="e#4676#4677#0" expanded="true" />
+                <element signature="e#4705#4706#0" expanded="true" />
+                <element signature="e#4795#4796#0" expanded="true" />
+                <element signature="e#4838#4839#0" expanded="true" />
+                <element signature="e#4867#4868#0" expanded="true" />
+                <element signature="e#4921#4922#0" expanded="true" />
+                <element signature="e#4957#4958#0" expanded="true" />
                 <element signature="e#4337#4338#0" expanded="true" />
                 <element signature="e#4370#4371#0" expanded="true" />
                 <element signature="e#4420#4421#0" expanded="true" />
@@ -135,7 +140,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/herui/chatroom/session/SessionEncode.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="138">
-              <caret line="6" column="52" lean-forward="true" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+              <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -219,9 +224,9 @@
         <option value="$PROJECT_DIR$/src/com/herui/chatroom/common/StringSessionEncode.java" />
         <option value="$PROJECT_DIR$/src/com/herui/chatroom/common/Session.java" />
         <option value="$PROJECT_DIR$/src/com/herui/chatroom/test/StartServer.java" />
-        <option value="$PROJECT_DIR$/src/com/herui/chatroom/session/Session.java" />
         <option value="$PROJECT_DIR$/src/com/herui/chatroom/client/Client.java" />
         <option value="$PROJECT_DIR$/src/com/herui/chatroom/server/Service.java" />
+        <option value="$PROJECT_DIR$/src/com/herui/chatroom/session/Session.java" />
       </list>
     </option>
   </component>
@@ -265,20 +270,6 @@
               <item name="ChatRoom" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="chatroom" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChatRoom" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChatRoom" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="chatroom" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChatRoom" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChatRoom" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="chatroom" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ChatRoom" type="b2602c69:ProjectViewProjectNode" />
@@ -799,12 +790,12 @@
       <workItem from="1541247092200" duration="379000" />
       <workItem from="1541247507562" duration="4995000" />
       <workItem from="1541255587678" duration="7086000" />
-      <workItem from="1541470820034" duration="14779000" />
+      <workItem from="1541470820034" duration="15428000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35070000" />
+    <option name="totallyTimeSpent" value="35719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -819,8 +810,8 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5060514" side_tool="true" weight="0.32991454" />
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" x="382" y="667" width="1322" height="241" id="Run" order="10" sideWeight="0.7299546" visible="true" weight="0.2913386" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3295838" />
+      <window_info anchor="bottom" x="382" y="667" width="1322" height="241" id="Run" order="10" sideWeight="0.7299546" weight="0.2913386" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3295838" />
       <window_info anchor="right" id="Coverage" side_tool="true" visible="true" weight="0.2185501" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Capture Tool" order="2" />
@@ -1101,53 +1092,9 @@
     <entry file="file://$PROJECT_DIR$/src/com/herui/chatroom/session/SessionEncode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
-          <caret line="6" column="52" lean-forward="true" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/herui/chatroom/test/StartServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-          <folding>
-            <element signature="e#265#266#0" expanded="true" />
-            <element signature="e#296#297#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/herui/chatroom/test/StartClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/herui/chatroom/session/Session.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="138" column="36" selection-start-line="138" selection-start-column="36" selection-end-line="138" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3926#3927#0" expanded="true" />
-            <element signature="e#3951#3952#0" expanded="true" />
-            <element signature="e#4035#4036#0" expanded="true" />
-            <element signature="e#4063#4064#0" expanded="true" />
-            <element signature="e#4099#4100#0" expanded="true" />
-            <element signature="e#4130#4131#0" expanded="true" />
-            <element signature="e#4174#4175#0" expanded="true" />
-            <element signature="e#4205#4206#0" expanded="true" />
-            <element signature="e#4262#4263#0" expanded="true" />
-            <element signature="e#4302#4303#0" expanded="true" />
-            <element signature="e#4337#4338#0" expanded="true" />
-            <element signature="e#4370#4371#0" expanded="true" />
-            <element signature="e#4420#4421#0" expanded="true" />
-            <element signature="e#4464#4465#0" expanded="true" />
-            <element signature="e#4497#4498#0" expanded="true" />
-            <element signature="e#4526#4527#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1173,6 +1120,57 @@
             <element signature="docComment;class#Service#0" />
             <element signature="e#576#577#0" expanded="true" />
             <element signature="e#603#604#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/herui/chatroom/test/StartServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding>
+            <element signature="e#265#266#0" expanded="true" />
+            <element signature="e#296#297#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/herui/chatroom/test/StartClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/herui/chatroom/session/Session.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="170" column="52" lean-forward="true" selection-start-line="170" selection-start-column="52" selection-end-line="170" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3926#3927#0" expanded="true" />
+            <element signature="e#3951#3952#0" expanded="true" />
+            <element signature="e#4035#4036#0" expanded="true" />
+            <element signature="e#4063#4064#0" expanded="true" />
+            <element signature="e#4099#4100#0" expanded="true" />
+            <element signature="e#4130#4131#0" expanded="true" />
+            <element signature="e#4174#4175#0" expanded="true" />
+            <element signature="e#4205#4206#0" expanded="true" />
+            <element signature="e#4262#4263#0" expanded="true" />
+            <element signature="e#4302#4303#0" expanded="true" />
+            <element signature="e#4676#4677#0" expanded="true" />
+            <element signature="e#4705#4706#0" expanded="true" />
+            <element signature="e#4795#4796#0" expanded="true" />
+            <element signature="e#4838#4839#0" expanded="true" />
+            <element signature="e#4867#4868#0" expanded="true" />
+            <element signature="e#4921#4922#0" expanded="true" />
+            <element signature="e#4957#4958#0" expanded="true" />
+            <element signature="e#4337#4338#0" expanded="true" />
+            <element signature="e#4370#4371#0" expanded="true" />
+            <element signature="e#4420#4421#0" expanded="true" />
+            <element signature="e#4464#4465#0" expanded="true" />
+            <element signature="e#4497#4498#0" expanded="true" />
+            <element signature="e#4526#4527#0" expanded="true" />
           </folding>
         </state>
       </provider>
